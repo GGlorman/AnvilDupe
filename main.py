@@ -1,12 +1,11 @@
 import pyautogui
 from pynput import keyboard
-from time import sleep
+from time import sleep as s
 
 print("Program is running!")
 
 COMBINATIONS = [
-    {keyboard.KeyCode(char='l')},
-    {keyboard.KeyCode(char='L')}
+    {keyboard.KeyCode(char=']')}
 ]
 
 current = set()
@@ -14,16 +13,28 @@ current = set()
 
 def execute():
     print("Bot is on!")
+    # Add space
     pyautogui.moveTo(748, 432)
-    sleep(0.01)
+    s(0.002)
     pyautogui.click()
-    sleep(0.01)
+    s(0.002)
     pyautogui.press("space")
-    sleep(0.01)
+    s(0.002)
     pyautogui.moveTo(1178, 432)
-    sleep(0.01)
+    s(0.002)
     pyautogui.click()
-    sleep(0.01)
+    s(0.002)
+    # Delete space
+    pyautogui.moveTo(748, 432)
+    s(0.002)
+    pyautogui.click()
+    s(0.002)
+    pyautogui.press("backspace")
+    s(0.002)
+    pyautogui.moveTo(1178, 432)
+    s(0.002)
+    pyautogui.click()
+    s(0.002)
 
 
 def on_press(key):
